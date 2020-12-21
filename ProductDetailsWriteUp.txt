@@ -1,0 +1,16 @@
+Step-by-Step Process of this code
+-----------------------------------------------------------------------
+
+This code runs and was done in the following manner.
+
+1) The enter product Info jsp page was created. 
+This page has 4 places to enter info.
+The first is the name, the second is the cost. The third place to enter information is
+a dropdown menu which allows you to choose between 5 different departments. The last is a text 
+box which allows you to write a description of the Product.
+
+2) Retreive the Information by using the servlet
+The servlet GetProductInfo.java takes in all of the information using the request.getParameter
+method. These values are then stored in a Product object in the session.
+
+3) The product object is retreived in the displayProductInfo.jsp file. The product is then 

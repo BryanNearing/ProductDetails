@@ -27,11 +27,14 @@ public class GetProductInfo extends HttpServlet {
 		HttpSession sesh = request.getSession(true);
 		RequestDispatcher rd = null;
 		
-		sesh.setAttribute("name", request.getParameter("name"));
-		sesh.setAttribute("cost", request.getParameter("cost"));
-		sesh.setAttribute("department", request.getParameter("department"));
-		sesh.setAttribute("description", request.getParameter("description"));
+		String name = request.getParameter("name");
+		String cost = request.getParameter("cost");
+		String department = request.getParameter("department");
+		String description = request.getParameter("description");
 		
+
+		Product p = new Product(name, Integer.parseInt(cost), department, description);
+		sesh.setAttribute("product", p);
 		
 		rd = request.getRequestDispatcher("displayProductInfo.jsp");
 		rd.forward(request, response);

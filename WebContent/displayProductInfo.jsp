@@ -10,10 +10,11 @@
 <body>
 
 <%
-out.println("Product name: " + session.getAttribute("name"));
-out.println("<br/>Cost ($): " + session.getAttribute("cost"));
-out.println("<br/>Department: " + session.getAttribute("department"));
-out.println("<br/>Description: <br/>" + session.getAttribute("description"));
+Product p = (Product) session.getAttribute("product");
+out.println("Product name: " + p.getName());
+out.println("<br/>Cost ($): " + p.getCost());
+out.println("<br/>Department: " + p.getDepartment());
+out.println("<br/>Description: <br/>" + p.getDescription());
 %>
 
 </body>
